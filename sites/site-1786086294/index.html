@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta City Roleplay Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .download-button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .download-button:hover {
+            background-color: #3e8e41;
+        }
+        @media only screen and (max-width: 768px) {
+            .container {
+                margin: 20px auto;
+                padding: 10px;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Meta City Roleplay Game</h1>
+    </div>
+    <div class="container">
+        <h2>Welcome to Meta City!</h2>
+        <p>Join our roleplay game and experience the thrill of a virtual city.</p>
+        <p>Download the game now and start playing!</p>
+        <a href="https://www.mediafire.com/file/d6qc683nyqlof1w/META+CITY.apk/file" target="_blank">
+            <button class="download-button">Download Now</button>
+        </a>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.querySelector(".container");
+            container.style.opacity = 0;
+            setTimeout(function() {
+                container.style.opacity = 1;
+                container.style.transition = "opacity 1s";
+            }, 500);
+        });
+    </script>
+</body>
+</html>
