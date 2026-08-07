@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        .nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            color: #ccc;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .test-section {
+            margin-bottom: 40px;
+        }
+        .test-section h2 {
+            margin-top: 0;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .answer {
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #444;
+        }
+        @media only screen and (max-width: 768px) {
+            .container {
+                margin: 20px auto;
+            }
+            .nav li {
+                display: block;
+                margin-right: 0;
+            }
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .fade-in {
+            animation: fade-in 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Testing Website</h1>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="#test1">Test 1</a></li>
+            <li><a href="#test2">Test 2</a></li>
+            <li><a href="#test3">Test 3</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="test-section" id="test1">
+            <h2>Test 1</h2>
+            <div class="question">
+                <p>What is your name?</p>
+                <input type="text" id="name" />
+            </div>
+            <div class="answer">
+                <p>Your answer: <span id="name-answer"></span></p>
+            </div>
+            <button class="btn" onclick="submitName()">Submit</button>
+        </div>
+        <div class="test-section" id="test2">
+            <h2>Test 2</h2>
+            <div class="question">
+                <p>How old are you?</p>
+                <input type="number" id="age" />
+            </div>
+            <div class="answer">
+                <p>Your answer: <span id="age-answer"></span></p>
+            </div>
+            <button class="btn" onclick="submitAge()">Submit</button>
+        </div>
+        <div class="test-section" id="test3">
+            <h2>Test 3</h2>
+            <div class="question">
+                <p>What is your favorite color?</p>
+                <select id="color">
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                </select>
+            </div>
+            <div class="answer">
+                <p>Your answer: <span id="color-answer"></span></p>
+            </div>
+            <button class="btn" onclick="submitColor()">Submit</button>
+        </div>
+    </div>
+    <script>
+        function submitName() {
+            const name = document.getElementById("name").value;
+            document.getElementById("name-answer").innerText = name;
+        }
+        function submitAge() {
+            const age = document.getElementById("age").value;
+            document.getElementById("age-answer").innerText = age;
+        }
+        function submitColor() {
+            const color = document.getElementById("color").value;
+            document.getElementById("color-answer").innerText = color;
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.querySelector(".container");
+            container.classList.add("fade-in");
+        });
+    </script>
+</body>
+</html>
