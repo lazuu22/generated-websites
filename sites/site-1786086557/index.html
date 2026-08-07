@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2f3136;
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #36393f;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .profile-info img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .profile-info h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .profile-info p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .button {
+            width: 100px;
+            height: 40px;
+            background-color: #4f545c;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .button:hover {
+            background-color: #5f6066;
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .fade-in {
+            animation: fade-in 1s;
+        }
+        @media only screen and (max-width: 600px) {
+            .container {
+                margin: 20px auto;
+                padding: 10px;
+            }
+            .profile-info {
+                padding: 10px;
+            }
+            .profile-info img {
+                width: 50px;
+                height: 50px;
+            }
+            .profile-info h2 {
+                font-size: 18px;
+            }
+            .profile-info p {
+                font-size: 14px;
+            }
+            .buttons {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-info fade-in">
+            <img src="https://cdn.discordapp.com/avatars/ID/Avatar.png" alt="Profile Picture">
+            <h2>Discord Username</h2>
+            <p>Discord Bio</p>
+        </div>
+        <div class="buttons">
+            <button class="button" onclick="window.open('https://discord.com/users/ID')">View Profile</button>
+            <button class="button" onclick="window.open('https://discord.com/api/guilds/GUILD_ID/members/ID')">Server Profile</button>
+        </div>
+    </div>
+    <script>
+        // Add event listener to window resize
+        window.addEventListener('resize', function() {
+            // Add your code here
+        });
+        
+        // Add animation to elements
+        const fadeIns = document.querySelectorAll('.fade-in');
+        fadeIns.forEach(function(element) {
+            element.classList.add('fade-in');
+        });
+    </script>
+</body>
+</html>
