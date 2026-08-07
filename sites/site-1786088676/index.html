@@ -1,0 +1,500 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand City Roleplay</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #000;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header nav ul li {
+            margin-right: 20px;
+        }
+        /* Main Styles */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 80px;
+        }
+        section {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        /* Home Section Styles */
+        #home {
+            background: linear-gradient(to bottom, #000, #03055B);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #home h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        #home p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        #home button {
+            background: #08f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        /* Features Section Styles */
+        #features {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .feature {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .feature h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .feature p {
+            font-size: 18px;
+        }
+        /* Download Button Styles */
+        #download {
+            background: #08f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        /* Discord Button Styles */
+        #discord {
+            background: #7289da;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        /* Admin Team Section Styles */
+        #admin-team {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .admin {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .admin h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .admin p {
+            font-size: 18px;
+        }
+        /* Server Statistics Section Styles */
+        #server-statistics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .statistic {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .statistic h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .statistic p {
+            font-size: 18px;
+        }
+        /* News and Updates Section Styles */
+        #news-and-updates {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .news {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .news h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .news p {
+            font-size: 18px;
+        }
+        /* Gallery Section Styles */
+        #gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .image {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        /* Contact Page Styles */
+        #contact {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        #contact h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        #contact p {
+            font-size: 18px;
+        }
+        /* Loading Screen Styles */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        #loading h1 {
+            font-size: 48px;
+        }
+        /* Animations */
+        @keyframes loading {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        #loading svg {
+            animation: loading 2s linear infinite;
+        }
+        /* Particle Effects */
+        #particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            overflow: hidden;
+        }
+        #particles canvas {
+            width: 100%;
+            height: 100%;
+        }
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+            section {
+                padding: 10px;
+            }
+            #features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            #admin-team {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            #server-statistics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            #news-and-updates {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            #gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#discord">Discord</a></li>
+                <li><a href="#admin-team">Admin Team</a></li>
+                <li><a href="#server-statistics">Server Statistics</a></li>
+                <li><a href="#news-and-updates">News and Updates</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Grand City Roleplay</h1>
+            <p>Welcome to Grand City Roleplay, the ultimate luxury roleplay game.</p>
+            <button id="download">Download Now</button>
+            <button id="discord">Join Discord</button>
+        </section>
+        <section id="about">
+            <h2>About the Game</h2>
+            <p>Grand City Roleplay is a luxury roleplay game that offers a realistic roleplay system, jobs and businesses, police and criminal factions, houses and vehicles, voice and text chat, events and rewards, economy system, daily missions, and custom characters.</p>
+        </section>
+        <section id="features">
+            <div class="feature">
+                <h2>Realistic Roleplay System</h2>
+                <p>Experience a realistic roleplay system that allows you to create your own character and interact with others in the game.</p>
+            </div>
+            <div class="feature">
+                <h2>Jobs and Businesses</h2>
+                <p>Take on various jobs and businesses to earn money and build your career in the game.</p>
+            </div>
+            <div class="feature">
+                <h2>Police and Criminal Factions</h2>
+                <p>Join the police force or become a member of a criminal faction to experience the thrill of the game.</p>
+            </div>
+            <div class="feature">
+                <h2>Houses and Vehicles</h2>
+                <p>Buy and customize your own houses and vehicles to show off your wealth and status in the game.</p>
+            </div>
+            <div class="feature">
+                <h2>Voice and Text Chat</h2>
+                <p>Communicate with other players using voice and text chat to build relationships and alliances in the game.</p>
+            </div>
+            <div class="feature">
+                <h2>Events and Rewards</h2>
+                <p>Participate in events and complete missions to earn rewards and bonuses in the game.</p>
+            </div>
+            <div class="feature">
+                <h2>Economy System</h2>
+                <p>Manage your finances and build your wealth in the game using the economy system.</p>
+            </div>
+            <div class="feature">
+                <h2>Daily Missions</h2>
+                <p>Complete daily missions to earn rewards and bonuses in the game.</p>
+            </div>
+            <div class="feature">
+                <h2>Custom Characters</h2>
+                <p>Create your own custom characters to play as in the game.</p>
+            </div>
+        </section>
+        <section id="download">
+            <button id="download-button">Download Now</button>
+            <a href="https://www.mediafire.com/file/d6qc683nyqlof1w/META+CITY.apk/file" target="_blank">https://www.mediafire.com/file/d6qc683nyqlof1w/META+CITY.apk/file</a>
+        </section>
+        <section id="discord">
+            <button id="discord-button">Join Discord</button>
+            <a href="https://discord.gg/AhSEctwTP" target="_blank">https://discord.gg/AhSEctwTP</a>
+        </section>
+        <section id="admin-team">
+            <div class="admin">
+                <h2>Admin Team</h2>
+                <p>Meet the admin team behind Grand City Roleplay.</p>
+            </div>
+            <div class="admin">
+                <h2>Developers</h2>
+                <p>Meet the developers who built the game.</p>
+            </div>
+            <div class="admin">
+                <h2>Designers</h2>
+                <p>Meet the designers who created the game's UI and UX.</p>
+            </div>
+        </section>
+        <section id="server-statistics">
+            <div class="statistic">
+                <h2>Server Statistics</h2>
+                <p>View the latest server statistics and performance metrics.</p>
+            </div>
+            <div class="statistic">
+                <h2>Player Count</h2>
+                <p>View the current player count and player activity.</p>
+            </div>
+            <div class="statistic">
+                <h2>Server Performance</h2>
+                <p>View the server's performance metrics and optimization status.</p>
+            </div>
+        </section>
+        <section id="news-and-updates">
+            <div class="news">
+                <h2>News and Updates</h2>
+                <p>Stay up-to-date with the latest news and updates from the game.</p>
+            </div>
+            <div class="news">
+                <h2>Patch Notes</h2>
+                <p>View the latest patch notes and changes to the game.</p>
+            </div>
+            <div class="news">
+                <h2>Community News</h2>
+                <p>View the latest community news and events.</p>
+            </div>
+        </section>
+        <section id="gallery">
+            <div class="image">
+                <img src="https://via.placeholder.com/300x200" alt="Image 1">
+            </div>
+            <div class="image">
+                <img src="https://via.placeholder.com/300x200" alt="Image 2">
+            </div>
+            <div class="image">
+                <img src="https://via.placeholder.com/300x200" alt="Image 3">
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us for any questions or concerns.</p>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <button>Send</button>
+            </form>
+        </section>
+    </main>
+    <div id="loading">
+        <h1>Loading...</h1>
+        <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" stroke-width="10" stroke="#08f" stroke-dasharray="100" stroke-dashoffset="100" fill="none"></circle>
+        </svg>
+    </div>
+    <div id="particles">
+        <canvas width="100%" height="100%"></canvas>
+    </div>
+    <script>
+        // Particle Effects
+        const particles = document.getElementById('particles');
+        const canvas = document.createElement('canvas');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        particles.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+        let particlesArray = [];
+        function createParticle(x, y) {
+            const particle = {
+                x: x,
+                y: y,
+                vx: Math.random() * 2 - 1,
+                vy: Math.random() * 2 - 1,
+                radius: Math.random() * 2 + 1
+            };
+            particlesArray.push(particle);
+        }
+        function drawParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                const particle = particlesArray[i];
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#08f';
+                ctx.fill();
+                particle.x += particle.vx;
+                particle.y += particle.vy;
+                if (particle.x < 0 || particle.x > canvas.width) {
+                    particle.vx = -particle.vx;
+                }
+                if (particle.y < 0 || particle.y > canvas.height) {
+                    particle.vy = -particle.vy;
+                }
+            }
+            requestAnimationFrame(drawParticles);
+        }
+        for (let i = 0; i < 100; i++) {
+            createParticle(Math.random() * canvas.width, Math.random() * canvas.height);
+        }
+        drawParticles();
+        // Loading Screen
+        const loading = document.getElementById('loading');
+        window.addEventListener('load', () => {
+            loading.style.display = 'none';
+        });
+        // Scroll Effects
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const sections = document.querySelectorAll('section');
+            for (let i = 0; i < sections.length; i++) {
+                const section = sections[i];
+                if (scrollPosition >= section.offsetTop - window.innerHeight / 2) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            }
+        });
+        // Mobile Responsive
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
