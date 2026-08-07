@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta City Roleplay</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #212121;
+            --secondary-color: #2196f3;
+            --background-color: #121212;
+            --text-color: #fff;
+            --glass-color: rgba(255, 255, 255, 0.1);
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            overflow-x: hidden;
+        }
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        header a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        /* Animated Background */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            animation: background 10s infinite;
+        }
+        @keyframes background {
+            0% {
+                background-position: 0% 100%;
+            }
+            100% {
+                background-position: 100% 0%;
+            }
+        }
+        /* Glassmorphism Effects */
+        .glass {
+            background-color: var(--glass-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        /* Button Styles */
+        .button {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
+        }
+        .button:hover {
+            background-color: var(--primary-color);
+        }
+        /* Particle Effects */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--text-color);
+            border-radius: 50%;
+            animation: particle 5s infinite;
+        }
+        @keyframes particle {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(100vw, 100vh);
+            }
+        }
+        /* Home Page Styles */
+        .home {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .home h1 {
+            font-size: 48px;
+            color: var(--text-color);
+            text-align: center;
+        }
+        /* About Page Styles */
+        .about {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .about h2 {
+            font-size: 36px;
+            color: var(--text-color);
+            text-align: center;
+        }
+        .about p {
+            font-size: 18px;
+            color: var(--text-color);
+            text-align: center;
+        }
+        /* Features Page Styles */
+        .features {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .features h2 {
+            font-size: 36px;
+            color: var(--text-color);
+            text-align: center;
+        }
+        .features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .features li {
+            font-size: 18px;
+            color: var(--text-color);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        /* News and Updates Page Styles */
+        .news {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .news h2 {
+            font-size: 36px;
+            color: var(--text-color);
+            text-align: center;
+        }
+        .news p {
+            font-size: 18px;
+            color: var(--text-color);
+            text-align: center;
+        }
+        /* Contact Page Styles */
+        .contact {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact h2 {
+            font-size: 36px;
+            color: var(--text-color);
+            text-align: center;
+        }
+        .contact p {
+            font-size: 18px;
+            color: var(--text-color);
+            text-align: center;
+        }
+        /* Mobile Responsive Styles */
+        @media only screen and (max-width: 768px) {
+            header {
+                padding: 10px;
+            }
+            header a {
+                font-size: 14px;
+            }
+            .background {
+                background-size: 100% 200px;
+            }
+            .glass {
+                padding: 10px;
+            }
+            .button {
+                padding: 5px 10px;
+                font-size: 14px;
+            }
+            .home h1 {
+                font-size: 24px;
+            }
+            .about h2 {
+                font-size: 24px;
+            }
+            .about p {
+                font-size: 14px;
+            }
+            .features h2 {
+                font-size: 24px;
+            }
+            .features li {
+                font-size: 14px;
+            }
+            .news h2 {
+                font-size: 24px;
+            }
+            .news p {
+                font-size: 14px;
+            }
+            .contact h2 {
+                font-size: 24px;
+            }
+            .contact p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+    </header>
+    <div class="background"></div>
+    <div class="particles">
+        <div class="particle" style="top: 10%; left: 10%;"></div>
+        <div class="particle" style="top: 20%; left: 20%;"></div>
+        <div class="particle" style="top: 30%; left: 30%;"></div>
+        <div class="particle" style="top: 40%; left: 40%;"></div>
+        <div class="particle" style="top: 50%; left: 50%;"></div>
+    </div>
+    <div class="home" id="home">
+        <h1>Meta City Roleplay</h1>
+        <button class="button"><a href="https://www.mediafire.com/file/d6qc683nyqlof1w/META+CITY.apk/file" style="color: var(--text-color); text-decoration: none;">Download APK</a></button>
+        <button class="button"><a href="https://discord.gg/AhSEctwTP" style="color: var(--text-color); text-decoration: none;">Join Discord</a></button>
+    </div>
+    <div class="about" id="about">
+        <h2>About Meta City Roleplay</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+    </div>
+    <div class="features" id="features">
+        <h2>Features</h2>
+        <ul>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            <li>Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        </ul>
+    </div>
+    <div class="news" id="news">
+        <h2>News and Updates</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+    </div>
+    <div class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+    </div>
+    <script>
+        // Add event listeners to buttons
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Add animation to buttons
+                button.classList.add('animate');
+                setTimeout(() => {
+                    button.classList.remove('animate');
+                }, 200);
+            });
+        });
+        // Add particle animation
+        const particles = document.querySelectorAll('.particle');
+        particles.forEach(particle => {
+            particle.addEventListener('animationiteration', () => {
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.left = `${Math.random() * 100}%`;
+            });
+        });
+    </script>
+</body>
+</html>
