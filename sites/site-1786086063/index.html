@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Birthday</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 18px;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service {
+            margin: 20px;
+            padding: 20px;
+            width: calc(33.33% - 20px);
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .service h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .service p {
+            font-size: 16px;
+        }
+        .packages {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .package {
+            margin: 20px;
+            padding: 20px;
+            width: calc(33.33% - 20px);
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .package h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .package p {
+            font-size: 16px;
+        }
+        .contact {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .contact h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .contact p {
+            font-size: 18px;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @media only screen and (max-width: 768px) {
+            .service, .package {
+                width: calc(50% - 20px);
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .service, .package {
+                width: 100%;
+            }
+        }
+        /* Animations */
+        .animate {
+            animation: animate 1s;
+        }
+        @keyframes animate {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container animate">
+        <div class="header">
+            <h1>Luxury Birthday</h1>
+            <p>Make your special day unforgettable</p>
+        </div>
+        <div class="services">
+            <div class="service">
+                <h2>Venue Decoration</h2>
+                <p>We provide luxurious venue decoration services to make your event unforgettable</p>
+            </div>
+            <div class="service">
+                <h2>Catering Services</h2>
+                <p>We offer a wide range of delicious cuisine options to satisfy your taste buds</p>
+            </div>
+            <div class="service">
+                <h2>Event Planning</h2>
+                <p>Our expert event planners will take care of every detail to make your event a success</p>
+            </div>
+        </div>
+        <div class="packages">
+            <div class="package">
+                <h2>Gold Package</h2>
+                <p>Includes venue decoration, catering services, and event planning</p>
+            </div>
+            <div class="package">
+                <h2>Silver Package</h2>
+                <p>Includes venue decoration and catering services</p>
+            </div>
+            <div class="package">
+                <h2>Bronze Package</h2>
+                <p>Includes venue decoration only</p>
+            </div>
+        </div>
+        <div class="contact">
+            <h1>Get in Touch</h1>
+            <p>Contact us to book your luxury birthday package</p>
+            <div class="contact-form">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <button>Send</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Add event listener to contact form button
+        document.querySelector('.contact-form button').addEventListener('click', function() {
+            // Get input values
+            var name = document.querySelector('.contact-form input[type="text"]').value;
+            var email = document.querySelector('.contact-form input[type="email"]').value;
+            var message = document.querySelector('.contact-form textarea').value;
+            // Send data to server using AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/contact', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({name: name, email: email, message: message}));
+        });
+    </script>
+</body>
+</html>
