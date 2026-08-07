@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Gaming Website</title>
+    <style>
+        /* Premium CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c2c2c;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .game-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+        }
+        .game-section img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .game-section h2 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .game-section p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .download-button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .download-button:hover {
+            background-color: #3e8e41;
+        }
+        .discord-link {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        /* Animation CSS */
+        .animate {
+            animation: animate 2s;
+        }
+        @keyframes animate {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        /* Mobile Responsive CSS */
+        @media only screen and (max-width: 768px) {
+            .game-section {
+                padding: 20px;
+            }
+            .game-section img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Thank you for your support, keep going!</h1>
+    </div>
+    <div class="game-section animate">
+        <img src="https://picsum.photos/200/300" alt="Game Image">
+        <h2>META CITY</h2>
+        <p>Download now and experience the ultimate gaming adventure!</p>
+        <a href="https://www.mediafire.com/file/d6qc683nyqlof1w/META+CITY.apk/file" target="_blank" class="download-button">Download Now!</a>
+        <p class="discord-link">Take a screenshot and share it on our Discord channel: <a href="https://discord.com/channels/1492549534323314858/1533481599860211843" target="_blank">https://discord.com/channels/1492549534323314858/1533481599860211843</a></p>
+    </div>
+    <script>
+        // Premium JavaScript Code
+        // Add event listener to download button
+        document.querySelector('.download-button').addEventListener('click', function() {
+            // Add animation to download button
+            this.classList.add('animate');
+            // Remove animation after 2 seconds
+            setTimeout(function() {
+                this.classList.remove('animate');
+            }.bind(this), 2000);
+        });
+    </script>
+</body>
+</html>
