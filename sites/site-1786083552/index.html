@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Birthday Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+        }
+        .header button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(120deg, #ff69b4 0%, #ffe6cc 100%);
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .header button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            margin: 20px;
+            padding: 20px;
+            width: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .card p {
+            font-size: 16px;
+            color: #666;
+        }
+        .card button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(120deg, #ff69b4 0%, #ffe6cc 100%);
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .card button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        @media only screen and (max-width: 768px) {
+            .container {
+                margin: 20px auto;
+                padding: 10px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+            .header h1 {
+                font-size: 24px;
+            }
+            .header button {
+                margin-top: 10px;
+            }
+            .main {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                margin: 10px auto;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Luxury Birthday Website</h1>
+            <button>Explore</button>
+        </div>
+        <div class="main">
+            <div class="card">
+                <h2>Birthday Cakes</h2>
+                <p>Customize your birthday cake with our expert bakers.</p>
+                <button>Order Now</button>
+            </div>
+            <div class="card">
+                <h2>Birthday Decorations</h2>
+                <p>Create an unforgettable atmosphere with our luxury decorations.</p>
+                <button>Explore</button>
+            </div>
+            <div class="card">
+                <h2>Birthday Parties</h2>
+                <p>Host an unforgettable birthday party with our expert event planners.</p>
+                <button>Get Started</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Animation on scroll
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card) => {
+                if (card.getBoundingClientRect().top < window.innerHeight) {
+                    card.classList.add('animate');
+                } else {
+                    card.classList.remove('animate');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
